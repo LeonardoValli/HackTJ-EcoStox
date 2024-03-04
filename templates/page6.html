@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ECOSTOX by Team Lorem Ipsum</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}" /></noscript>
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team</title>
+    <style>
+        .team-members {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+			margin-top: 50px
+        }
+        .team-member {
+            width: 200px;
+            text-align: bottom;
+            margin: 20px;
+        }
+        .team-member img {
+            width: 150px; /* Adjust image width as needed */
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            width: 80%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            width: 400px;
+            text-align: center;
+            margin: 20px;
+        }
+
+ </style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">EcoStox</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/generic"> Our Mission</a></li>
+							<li><a href="/page2">Our Tool</a></li>
+							<li><a href="/page5">Resources</a></li>
+							<li><a href="/page3">Reports and Releases</a></li>
+							<li><a href="/page6">The Team</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Meet the Team</h1>
+
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <img src="images/jude.jpg" alt="Team Member 1">
+                                    <h2>Jude Caldwell</h2>
+                                    <p>Position: CEO</p>
+                                    <p>Jude is the visionary leader driving our algorithm.</p>
+                                </div>
+                        
+                                <div class="team-member">
+                                    <img src="images/leo.jpg" alt="Team Member 2">
+                                    <h2>Leonardo Valli</h2>
+                                    <p>Position: CTO</p>
+                                    <p>Leonardo is our tech guru, ensuring our back-end is spick and span.</p>
+                                </div>
+                        
+                                <div class="team-member">
+                                    <img src="images/megan.jpg" alt="Team Member 3">
+                                    <h2>Megan Zhang</h2>
+                                    <p>Position: COO</p>
+                                    <p>Megan keeps our website's front-end updated and helps with design.</p>
+                                </div>
+                        
+                                <div class="team-member">
+                                    <img src="images/marla.jpg" alt="Team Member 4">
+                                    <h2>Marla Wisniewski</h2>
+                                    <p>Position: CFO</p>
+                                    <p>Marla manages our project's outward face through design.</p>
+                                </div>
+                            </div>
+
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch with us.</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/browser.min.js"></script>
+		<script src="static/js/breakpoints.min.js"></script>
+		<script src="static/js/util.js"></script>
+		<script src="static/js/main.js"></script>
+
+	</body>
+</html>

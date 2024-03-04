@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ECOSTOX by Team Lorem Ipsum</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">EcoStox</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/generic"> Our Mission</a></li>
+							<li><a href="/page2">Our Tool</a></li>
+							<li><a href="/page5">Resources</a></li>
+							<li><a href="/page3">Reports and Releases</a></li>
+							<li><a href="/page6">The Team</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Companies With the Largest Economic Focus</h1>
+
+							<span class="image main"><img src="images/graphstuff.png" alt="" /></span>
+							<p>More than 6,500 companies have improved their environmental impact plan since 2016; here are the 100 with the greatest progress in 2023. </p>
+							<div id="listHolder">
+
+							</div>76754q1	
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch with us.</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				<!-- Get the dict of ticker : companies and have a numbered list for each pair -->
+				let dictionary = {
+    "SCHN": "Schnitzer Steel Industries Inc",
+    "VWSYF": "Vestas Wind Systems A/S",
+    "BXBLY": "Brambles Ltd",
+    "BEP": "Brookfield Renewable Partners LP",
+    "ADSK": "Autodesk Inc",
+    "AQUA": "Evoqua Water Technologies Corp",
+    "STN": "Stantec Inc",
+    "SBGSF": "Schneider Electric SE",
+    "GCTAY": "Siemens Gamesa Renewable Energy SA",
+    "2933.TW": "Taiwan High Speed Rail Corp",
+    "DSY": "Dassault Systemes SE",
+    "968.HK": "Xinyi Solar Holdings Ltd",
+    "DOGEF": "Orsted A/S",
+    "SMS": "Sims Ltd",
+    "BDORY": "Banco do Brasil SA",
+    "RKWBF": "Rockwool A/S",
+    "JCI": "Johnson Controls International PLC",
+    "CHYHY": "Chr Hansen Holding A/S",
+    "KKOYY": "Kone Oyj",
+    "CAS": "Cascades Inc",
+    "AY": "Atlantica Sustainable Infrastructure PLC",
+    "MKC": "McCormick & Company Inc",
+    "NZYM.B.CO": "Novozymes A/S",
+    "IBE.MC": "Iberdrola SA",
+    "BTGOF": "BT Group PLC",
+    "GOOGL": "Alphabet Inc",
+    "345.HK": "Vitasoy International Holdings Ltd",
+    "CDEVY": "City Developments Ltd",
+    "NESN.SW": "Neste Oyj",
+    "ECL": "Ecolab Inc",
+    "KER": "Kering SA",
+    "3718.HK": "Beijing Enterprises Water Group Ltd",
+    "ASMIY": "ASM International NV",
+    "CCCMF": "StarHub Ltd",
+    "SPWR": "SunPower Corp",
+    "XRX": "Xerox Holdings Corp",
+    "TU": "Telus Corp",
+    "UL": "Unilever PLC",
+    "HPQ": "HP Inc",
+    "VMW": "VMware Inc",
+    "SAP": "SAP SE",
+    "BCE": "BCE Inc",
+    "CLPBY": "Coloplast A/S",
+    "KKPNY": "Koninklijke KPN NV",
+    "CGEAF": "Cogeco Communications Inc",
+    "FSLR": "First Solar Inc",
+    "PMMAF": "Puma SE",
+    "CSCO": "Cisco Systems Inc",
+    "ATEJF": "Atea ASA",
+    "KNCAY": "Konica Minolta Inc",
+    "9921.TW": "Giant Manufacturing Co Ltd",
+    "ESSYY": "Essity AB (publ)",
+    "ESALY": "Eisai Co Ltd",
+    "ERG.MI": "ERG SpA",
+    "SFM": "Sprouts Farmers Market Inc",
+    "CLIUF": "CapitaLand Investment Ltd",
+    "0017.HK": "Sino Land Co Ltd",
+    "SVTRF": "Severn Trent PLC",
+    "ISNPY": "Intesa Sanpaolo SpA",
+    "GIL": "Gildan Activewear Inc",
+    "SAN": "Sanofi SA",
+    "UHR": "Swatch Group AG",
+    "SSNLF": "Samsung SDI Co Ltd",
+    "1588.HK": "Yadea Group Holdings Ltd",
+    "ERIC": "Telefonaktiebolaget LM Ericsson",
+    "ADDYY": "Adidas AG",
+    "HPE": "Hewlett Packard Enterprise Co",
+    "KB": "KB Financial Group Inc",
+    "MAXN": "Maxeon Solar Technologies Ltd",
+    "ORKLY": "Orkla ASA",
+    "BNPQY": "BNP Paribas SA",
+    "SVNLY": "Svenska Handelsbanken AB",
+    "AAPL": "Apple Inc",
+    "KKOQY": "Kesko Oyj",
+    "QDT.F": "Quadient SA",
+    "INVPF": "Investec Ltd",
+    "SLF": "Sun Life Financial Inc",
+    "TECK": "Teck Resources Ltd",
+    "NIO": "NIO Inc",
+    "RICOY": "Ricoh Co Ltd",
+    "HENKY": "Henkel AG & Co KgaA",
+    "STB": "Storebrand ASA",
+    "GILD": "Gilead Sciences Inc",
+    "SKSUY": "Sekisui Chemical Co Ltd",
+    "CRZBY": "Commerzbank AG",
+    "TSLA": "Tesla Inc",
+    "BEAZY": "Beazley PLC",
+    "BMO": "Bank of Montreal",
+    "ACKAY": "Arcelik AS",
+    "CDNTF": "Canadian Tire Corporation Ltd",
+    "NABZY": "National Australia Bank Ltd",
+    "IGIFF": "IGM Financial Inc",
+    "PFE": "Pfizer Inc",
+    "NRBAY": "Nordea Bank Abp",
+    "MKKGY": "Merck KGaA",
+    "SCGLY": "Societe Generale SA",
+    "AZN": "AstraZeneca PLC",
+    "PHG": "Koninklijke Philips NV",
+    "DHR": "Danaher Corp",
+    "NVAX": "Novavax Inc"
+}
+				let listHolder = document.getElementById('listHolder');
+				let list = document.createElement('ol');
+				listHolder.appendChild(list);
+				for (let key in dictionary) {
+					let listItem = document.createElement('li');
+					listItem.innerHTML = dictionary[key] + " (" + key + ")";
+					list.appendChild(listItem);
+				}
+
+			</script>
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/browser.min.js"></script>
+			<script src="static/js/breakpoints.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+
+	</body>
+</html>

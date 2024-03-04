@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}" /></noscript>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+                <a href="/" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">EcoStox</span>
+                </a>
+
+            <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+        </div>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/generic"> Our Mission</a></li>
+            <li><a href="/page2">Our Tool</a></li>
+            <li><a href="/page5">Resources</a></li>
+            <li><a href="/page3">Reports and Releases</a></li>
+            <li><a href="/page6">The Team</a></li>
+        </ul>
+    </nav>
+    <h1>Recommended Stocks</h1>
+    <ol>
+        {% for stock in stockRecs %}
+            <li>{{stock}}, Environmental Rating {{stockRecs[stock][1]}}</li>
+        {% endfor %}
+    </ol>
+    
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/browser.min.js"></script>
+		<script src="static/js/breakpoints.min.js"></script>
+		<script src="static/js/util.js"></script>
+		<script src="static/js/main.js"></script>
+</body>
+</html>

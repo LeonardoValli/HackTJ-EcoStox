@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/forms.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}" /></noscript>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">EcoStox</span>
+            </a>
+
+            <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+        </div>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+							<li><a href="/generic"> Our Mission</a></li>
+							<li><a href="/page2">Our Tool</a></li>
+							<li><a href="/page5">Resources</a></li>
+							<li><a href="/page3">Reports and Releases</a></li>
+							<li><a href="/page6">The Team</a></li>
+        </ul>
+    </nav>
+    <h1>Stock Information</h1>
+    <section>
+        <form action="/stockReport" method="POST" onsubmit="return onSubmit()">
+            <h3>Stock Name (Optional):</h3>
+            <input name="name" type="text">
+            <div>
+                <h3>Minimum Stock Risk Rating (Optional):</h3>
+                <label for="1risk">1</label>
+                <input name="risk" type="radio" id="1risk" value = "1"><br>
+
+                <label for="2risk">2</label>
+                <input name="risk" type="radio" id="2risk" value = "2"><br>
+
+                <label for="3risk">3</label>
+                <input name="risk" type="radio" id="3risk" value = "3"><br>
+
+                <label for="4risk">4</label>
+                <input name="risk" type="radio" id="4risk" value = "4"><br>
+                
+
+            </div>
+            <div>
+                <h3>Stock Type:</h3>
+                <label for="energy">Energy</label>
+                <input name="type" type="radio" id="energy" value="energy"><br>
+
+                <label for="materials">Materials</label>
+                <input name="type" type="radio" id="materials" value="materials"><br>
+
+                <label for="industrials">Industrials</label>
+                <input name="type" type="radio" id="industrials" value="industrial"><br>
+
+                <label for="consumerdiscretionary">Consumer Discretionary</label>
+                <input name="type" type="radio" id="consumerdiscretionary" value="consumer_discretionary"><br>
+
+                <label for="consumerstaples">Consumer Staples</label>
+                <input name="type" type="radio" id="consumerstaples" value="consumer_staples"><br>
+
+                <label for="healthcare">Health Care</label>
+                <input name="type" type="radio" id="healthcare" value="healthcare"><br>
+
+                <label for="financials">Financials</label>
+                <input name="type" type="radio" id="financials" value="financials"><br>
+
+                <label for="informationtechnology">Information Technology</label>
+                <input name="type" type="radio" id="informationtechnology" value="information_technology"><br>
+                
+                <label for="communicationservices">Communication Services</label>
+                <input name="type" type="radio" id="communicationservices" value="communication_services"><br>
+
+                <label for="utilities">Utilities</label>
+                <input name="type" type="radio" id="utilities" value="utilities"><br>
+
+                <label for="realestate">Real Estate</label>
+                <input name="type" type="radio" id="realestate" value="real_estate"><br>
+
+                <label for="consumergoods">Consumer Goods</label>
+                <input name="type" type="radio" id="consumergoods" value="consumer_goods"><br>
+            </div>
+            <h3>How many of the top recommended stocks do you want to see? (Optional, Max 15, Default 5)</h3>
+            <input name="count" type="number">
+            <p></p>
+            <input type="submit" value="Find Stocks">
+        </form>
+    </section>
+    <script>
+        function navigateTo(route) { // You can handle the routing logic here, e.g., load different content based on the route console.log(`Navigating to ${route}`); // For demonstration purposes, you can update the section's content dynamically 
+            window.location.href = route
+        }
+
+        function onSubmit(){
+            let value = true
+
+            // let name = document.querySelector('input[type="text"]')
+            // if(name.value === ''){
+            //     alert('Choose a stock name!!!')
+            //     value=false
+            // }
+
+            // let risk = document.querySelector('input[name="risk"]:checked')
+            // if(risk===null){
+            //     alert('Choose a risk level!!!')
+            //     value=false
+            // }
+
+            let type = document.querySelector('input[name="type"]:checked')
+            if(type===null){
+                alert('Choose a stock category!!!')
+                value=false
+            }
+
+            let count = document.querySelector('input[name="count"]')
+            console.log(count)
+            if(count!==null && Number(count.value) > 15){
+                alert('Enter a count of 15 or less!!!')
+                value=false
+            }
+            
+            return value
+        
+        }
+    </script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/browser.min.js"></script>
+    <script src="static/js/breakpoints.min.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
